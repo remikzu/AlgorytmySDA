@@ -7,9 +7,9 @@ public class Zadanie1 {
 
 
     static void evenReversed (int tab[]) {
-        for (int i = tab.length; i > 0; i--) {
+        for (int i = tab.length-1; i >= 0; i--) {
             if (i%2 == 0) {
-                System.out.println(i);
+                System.out.println(tab[i]);
             }
         }
     }
@@ -38,10 +38,14 @@ public class Zadanie1 {
     public static void main(String[] args) {
 
         int[] tab = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] tab2 = {11, 122, 1231, 31231, 23123, 1, 23, 123, 1321};
+        int[] tab3 = {2, 1, 2, 3, 4};
+        System.out.println("Metoda 1:");
         evenReversed(tab);
+        System.out.println("Metoda 2:");
         System.out.println(sumDividedBy3(tab));
-        System.out.println(sumOfFirst5(tab));
-
+        System.out.println("Metoda 3:");
+        System.out.println(sumOfFirst5(tab3));
 
     }
 
