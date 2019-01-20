@@ -1,5 +1,7 @@
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
+import struktury_danych.stos.StosLista;
+import struktury_danych.stos.StosListaOutOfIndex;
 
 import java.util.Scanner;
 
@@ -71,12 +73,64 @@ public class Main {
         }
     }
 
+    public static void wywolajStosList() {
+        StosLista stosLista = new StosLista();
+
+        stosLista.push(1);
+        stosLista.push(2);
+        stosLista.push(3);
+
+        stosLista.print();
+
+        try {
+            System.out.println("pop: " + stosLista.pop());
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
+        }
+        try {
+            System.out.println("pop: " + stosLista.pop());
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
+        }
+
+        stosLista.push(4);
+        stosLista.push(5);
+
+        stosLista.print();
+
+        try {
+            System.out.println("peek: " + stosLista.peek());
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
+        }
+        try {
+            System.out.println(stosLista.pop());
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
+        }
+        try {
+            System.out.println("peek: " + stosLista.peek());
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
+        }
+
+        try {
+            stosLista.pop();
+            stosLista.pop();
+            stosLista.pop();
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            System.out.println(stosListaOutOfIndex.getMessage());
+        }
+
+        stosLista.print();
+    }
+
 
     public static void main(String[] args) {
 
 //        wywolajTablice();
-        wywolajStosTab();
-
+//        wywolajStosTab();
+        wywolajStosList();
     }
 
 }
