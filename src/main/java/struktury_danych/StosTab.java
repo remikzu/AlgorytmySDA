@@ -10,16 +10,23 @@ public class StosTab {
         tab = new int[size];
     }
 
-    public void push(int value) {
+    public void push(int value) throws ArrayIndexOutOfBoundsException{
 //        top++; //top += 1; //zwiekszamy topa zeby indeks byl rowny 0
 //        tab[top] = value; lub:
+        if (isFull()) {
+            throw new ArrayIndexOutOfBoundsException("isFull moja wiadomość");
+        }
+
         tab[++top] = value; //preinkrementacja, żeby najpierw go zwiększył
     }
 
-    public int pop() {
+    public int pop() throws ArrayIndexOutOfBoundsException{
 /*        int value = tab[top];
         top--;
         return value; lub:*/
+        if (isEmpty()) {
+            throw new ArrayIndexOutOfBoundsException("isEmpty moja wiadomość");
+        }
 
         return tab[top--];
     }
@@ -35,7 +42,16 @@ public class StosTab {
         return top == -1;
     }
 
-    public int peek() {
+    public boolean isFull() {
+        return top >= tab.length-1;
+    }
+
+    public int peek() throws ArrayIndexOutOfBoundsException{
+
+        if(isEmpty()) {
+            throw new ArrayIndexOutOfBoundsException("isEmpty moja wiadomość");
+        }
+
         return tab[top];
     }
 

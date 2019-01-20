@@ -30,7 +30,7 @@ public class Main {
         while (true) {
             System.out.println("Podaj operację:" +
                     "1. push()" +
-                    "2. pop() + " +
+                    "2. pop() " +
                     "3. peek()" +
                     "4. print()" +
                     "0. wyjście");
@@ -41,16 +41,29 @@ public class Main {
                 case 1:
                     System.out.println("Podaj wartość:");
                     int value = scanner.nextInt();
-                    stosTab.push(value);
+
+                    try {
+                        stosTab.push(value);
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
-                    System.out.println(stosTab.pop());
+                    try {
+                        System.out.println(stosTab.pop());
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 3:
-                    System.out.println(stosTab.peek());
+                    try {
+                        System.out.println(stosTab.peek());
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
-                    stosTab.print();
+                        stosTab.print();
                     break;
                 case 0:
                     return;
@@ -62,6 +75,7 @@ public class Main {
     public static void main(String[] args) {
 
 //        wywolajTablice();
+        wywolajStosTab();
 
     }
 
