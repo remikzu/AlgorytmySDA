@@ -1,3 +1,5 @@
+package struktury_danych;
+
 public class Zadanie1 {
 
 //Dana jest tablica liczb calkowitych. Wypisz:
@@ -45,7 +47,7 @@ public class Zadanie1 {
         System.out.println("Metoda 2:");
         System.out.println(sumDividedBy3(tab));
         System.out.println("Metoda 3:");
-        System.out.println(sumOfFirst5(tab3));
+        System.out.println(sumOfFirst5(tab));
 
     }
 
