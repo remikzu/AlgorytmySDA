@@ -8,7 +8,7 @@ public class Tablice {
 // wynik sumy 5 poczatkowych liczb i odejmując ostatni element, zakłądając, że tablica jest rozmiaru co najmniej 6
 
 
-    public static void showEvenReversed(int tab[]) {
+    void showEvenReversed(int tab[]) {
         for (int i = tab.length-1; i >= 0; i--) {
             if (i%2 == 0) {
                 System.out.println(tab[i]);
@@ -16,24 +16,24 @@ public class Tablice {
         }
     }
 
-    public static int sumDividedBy3 (int tab[]) {
+    int sumDividedBy3(int tab[]) {
         int sum = 0;
-        for (int i = 0; i < tab.length; i++) {
-            if (tab[i]%3 == 0) {
-                sum+=tab[i];
+        for (int e : tab) {
+            if (e % 3 == 0) {
+                sum += e;
             }
         }
         return sum;
     }
 
-    public static int sumOfFirst5 (int tab[]) {
+    int sumOfFirst5(int tab[]) {
         int sum = 0;
-        if (tab.length < 6) throw new IllegalArgumentException("Tablica za malego rozmiaru!");
+        if (tab.length < 6) throw new ArrayIndexOutOfBoundsException("Tablica za malego rozmiaru!");
         else {
             for (int i = 0; i < 5; i++) {
                 sum += tab[i];
             }
         }
-        return sum;
+        return sum - tab[tab.length-1];
     }
 }

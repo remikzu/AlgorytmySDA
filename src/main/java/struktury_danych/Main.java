@@ -8,7 +8,7 @@ public class Main {
 
         Tablice tablica = new Tablice();
 
-        int[] tab = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] tab = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int[] tab2 = {11, 122, 1231, 31231, 23123, 1, 23, 123, 1321};
         int[] tab3 = {2, 1, 2, 3, 4};
         System.out.println("Metoda 1:");
