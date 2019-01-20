@@ -5,9 +5,9 @@ import struktury_danych.stos.StosListaOutOfIndex;
 
 public class ONP {
 
-    public ONP() {
-
-    }
+//    public ONP() { // <- pusty konstruktor, teoretycznie nie potrzebny bo Java to robi za nas
+//
+//    }
 
     public void run(String[] tab) {
         StosLista stosLista = new StosLista();
@@ -29,16 +29,28 @@ public class ONP {
                 int count = 0;
                 switch (e) {
                     case "+":
-                        count = valueFirstElement + valueSecondElement;
+                        count = valueSecondElement + valueFirstElement;
                         break;
                     case "-":
+                        count = valueSecondElement - valueFirstElement;
                         break;
                     case "*":
+                        count = valueSecondElement * valueFirstElement;
                         break;
                     case "/":
+                        count = valueSecondElement / valueFirstElement;
                         break;
                 }
+
+                stosLista.push(count);
             }
+        }
+
+        try {
+            int result = stosLista.pop();
+            System.out.println("Wynik: " + result);
+        } catch (StosListaOutOfIndex stosListaOutOfIndex) {
+            stosListaOutOfIndex.printStackTrace();
         }
     }
 

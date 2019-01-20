@@ -1,5 +1,6 @@
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
+import struktury_danych.algorytmy.ONP;
 import struktury_danych.kolejka.KolejkaElem;
 import struktury_danych.kolejka.KolejkaLista;
 import struktury_danych.stos.StosLista;
@@ -146,13 +147,23 @@ public class Main {
         kolejkaLista.print();
     }
 
+    public static void wywolajONP() {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        String[] operations = input.split(" ");
+
+        new ONP().run(operations);
+    }
+
 
     public static void main(String[] args) {
 
 //        wywolajTablice();
 //        wywolajStosTab();
 //        wywolajStosList();
-        wywolajKolejkaLista();
+//        wywolajKolejkaLista();
+        wywolajONP();
     }
 
 }
