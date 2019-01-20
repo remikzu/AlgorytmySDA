@@ -22,8 +22,4 @@ public class StosElem {
     public StosElem getPrev() {
         return prev;
     }
-
-    public void setPrev(StosElem prev) {
-        this.prev = prev;
-    }
 }

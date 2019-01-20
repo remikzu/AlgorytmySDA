@@ -1,5 +1,7 @@
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
+import struktury_danych.kolejka.KolejkaElem;
+import struktury_danych.kolejka.KolejkaLista;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
 
@@ -125,12 +127,32 @@ public class Main {
         stosLista.print();
     }
 
+    public static void wywolajKolejkaLista() {
+        KolejkaLista kolejkaLista = new KolejkaLista();
+
+        kolejkaLista.add(1);
+        kolejkaLista.add(2);
+        kolejkaLista.add(3);
+
+        kolejkaLista.print();
+
+        System.out.println(kolejkaLista.poll());
+        System.out.println(kolejkaLista.peek());
+        System.out.println(kolejkaLista.poll());
+
+        kolejkaLista.add(5);
+        kolejkaLista.add(7);
+
+        kolejkaLista.print();
+    }
+
 
     public static void main(String[] args) {
 
 //        wywolajTablice();
 //        wywolajStosTab();
-        wywolajStosList();
+//        wywolajStosList();
+        wywolajKolejkaLista();
     }
 
 }
