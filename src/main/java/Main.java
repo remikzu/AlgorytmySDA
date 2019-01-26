@@ -1,8 +1,9 @@
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
 import struktury_danych.algorytmy.ONP;
-import struktury_danych.kolejka.KolejkaElem;
 import struktury_danych.kolejka.KolejkaLista;
+import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
+import struktury_danych.kolejkadwukierunkowa.KolejkaLista2KierOutOfIndex;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
 
@@ -156,6 +157,44 @@ public class Main {
         new ONP().run(operations);
     }
 
+    public static void wywolajKolejkaDwukierunkowa() {
+
+        ListaDwukierunkowaLista listaDwukierunkowaLista = new ListaDwukierunkowaLista();
+
+        listaDwukierunkowaLista.addFirst(1);
+        listaDwukierunkowaLista.addFirst(123);
+        listaDwukierunkowaLista.addFirst(334);
+        listaDwukierunkowaLista.addLast(22);
+        listaDwukierunkowaLista.addLast(5324523);
+
+        listaDwukierunkowaLista.printFromStart();
+        System.out.println("===============");
+        listaDwukierunkowaLista.printFromLast();
+
+        try {
+            System.out.println(listaDwukierunkowaLista.pollFirst());
+        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
+            kolejkaLista2KierOutOfIndex.printStackTrace();
+        }
+        try {
+            System.out.println(listaDwukierunkowaLista.peekFirst());
+        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
+            kolejkaLista2KierOutOfIndex.printStackTrace();
+        }
+        try {
+            System.out.println(listaDwukierunkowaLista.pollFirst());
+        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
+            kolejkaLista2KierOutOfIndex.printStackTrace();
+        }
+
+        listaDwukierunkowaLista.addLast(5);
+        listaDwukierunkowaLista.addFirst(7);
+
+        listaDwukierunkowaLista.printFromStart();
+        System.out.println("==================");
+        listaDwukierunkowaLista.printFromLast();
+
+    }
 
     public static void main(String[] args) {
 
@@ -163,7 +202,8 @@ public class Main {
 //        wywolajStosTab();
 //        wywolajStosList();
 //        wywolajKolejkaLista();
-        wywolajONP();
+//        wywolajONP();
+            wywolajKolejkaDwukierunkowa();
     }
 
 }
