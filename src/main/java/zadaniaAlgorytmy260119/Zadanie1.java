@@ -20,24 +20,23 @@ public class Zadanie1 {
     public static Random random = new Random();
 
     public static boolean ifSortedFromLower (int[] tab) {
-        boolean isSorted = false;
         for (int i = 0; i < tab.length-1; i++) {
-            if (tab[i+1] >= tab[i]) {
-                isSorted = true;
+            if (tab[i] < tab[i+1]) {
+                return false;
             }
-            else isSorted = false;
         }
-        return isSorted;
+        return true;
     }
 
     public static void showElements () {
         System.out.println("Podaj liczbę elementów");
-        int count = sc.nextInt();
-        int[] tab = new int[count];
-        for (int i = 0; i < count; i++) {
+        int size = sc.nextInt();
+        int[] tab = new int[size];
+        for (int i = 0; i < size; i++) {
             tab[i] = random.nextInt(10);
         }
         System.out.println(Arrays.toString(tab));
+        sc.close();
     }
 
     public static int[] sumOfElements(int[] tab, int[] tab2) {
@@ -94,7 +93,7 @@ public class Zadanie1 {
     public static void main(String[] args) {
 
         int[] tab = {1, 2, 3, 4, 5, 246, 234, 5, 2345, 2345, 3245, 435};
-        int[] tab2 = {2, 3, 4, 4, 5};
+        int[] tab2 = {5, 4, 3, 2, 1};
         int[] tab3 = {1, 2, 3};
         int[] tab4 = {1, 2, 3, 4, 5};
         System.out.println("Zadanie 1:");
