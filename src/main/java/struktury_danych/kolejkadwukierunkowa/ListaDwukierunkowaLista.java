@@ -33,16 +33,16 @@ public class ListaDwukierunkowaLista {
         }
     }
 
-    public int peekFirst() throws KolejkaLista2KierOutOfIndex {
+    public int peekFirst() throws ListaOutOfIndex {
         if (isEmpty()) {
-            throw new KolejkaLista2KierOutOfIndex("Lista jest pusta!");
+            throw new ListaOutOfIndex("Lista jest pusta!");
         }
         return first.getValue();
     }
 
-    public int peekLast() throws KolejkaLista2KierOutOfIndex {
+    public int peekLast() throws ListaOutOfIndex {
         if (isEmpty()) {
-            throw new KolejkaLista2KierOutOfIndex("Lista jest pusta!");
+            throw new ListaOutOfIndex("Lista jest pusta!");
         }
         return last.getValue();
     }
@@ -51,9 +51,45 @@ public class ListaDwukierunkowaLista {
         return first == null;
     }
 
-    public int pollFirst() throws KolejkaLista2KierOutOfIndex {
+    public boolean ifContain(int value) {
+        ListaDwukierunkowaElem tmp = first;
+        while (tmp != null) {
+            if (value == tmp.getValue()) {
+                return true;
+            }
+            tmp = tmp.getNext();
+        }
+        return false;
+    }
+
+    public void delete(int value) {
+        ListaDwukierunkowaElem tmp = first;
+
+        while (tmp != null) {
+            if(value == first.getValue()) {
+                try {
+                    pollFirst();
+                } catch (ListaOutOfIndex listaOutOfIndex) {
+                    listaOutOfIndex.printStackTrace();
+                }
+            } else if (value == last.getValue()) {
+                try {
+                    pollLast();
+                } catch (ListaOutOfIndex listaOutOfIndex) {
+                    listaOutOfIndex.printStackTrace();
+                }
+            } else if (value == tmp.getValue()) {
+                tmp.getPrevious().setNext(tmp.getNext());
+                tmp.getNext().setPrevious(tmp.getPrevious());
+            }
+            tmp = tmp.getNext();
+        }
+
+    }
+
+    public int pollFirst() throws ListaOutOfIndex {
         if (isEmpty()) {
-            throw new KolejkaLista2KierOutOfIndex("Lista jest pusta!");
+            throw new ListaOutOfIndex("Lista jest pusta!");
         }
         int value = first.getValue();
 
@@ -67,9 +103,9 @@ public class ListaDwukierunkowaLista {
         return value;
     }
 
-    public int pollLast() throws KolejkaLista2KierOutOfIndex {
+    public int pollLast() throws ListaOutOfIndex {
         if (isEmpty()) {
-            throw new KolejkaLista2KierOutOfIndex("Lista jest pusta!");
+            throw new ListaOutOfIndex("Lista jest pusta!");
         }
         int value = last.getValue();
 

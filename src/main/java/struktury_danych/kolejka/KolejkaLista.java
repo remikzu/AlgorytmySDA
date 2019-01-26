@@ -1,5 +1,7 @@
 package struktury_danych.kolejka;
 
+import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaElem;
+
 public class KolejkaLista {
 
     private KolejkaElem first;

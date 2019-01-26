@@ -3,7 +3,7 @@ import struktury_danych.Tablice;
 import struktury_danych.algorytmy.ONP;
 import struktury_danych.kolejka.KolejkaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
-import struktury_danych.kolejkadwukierunkowa.KolejkaLista2KierOutOfIndex;
+import struktury_danych.kolejkadwukierunkowa.ListaOutOfIndex;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
 
@@ -160,38 +160,42 @@ public class Main {
     public static void wywolajKolejkaDwukierunkowa() {
 
         ListaDwukierunkowaLista listaDwukierunkowaLista = new ListaDwukierunkowaLista();
-        
+
         listaDwukierunkowaLista.addFirst(1);
         listaDwukierunkowaLista.addFirst(123);
         listaDwukierunkowaLista.addFirst(334);
         listaDwukierunkowaLista.addLast(22);
         listaDwukierunkowaLista.addLast(5324523);
+        listaDwukierunkowaLista.printFromStart();
+        int szukaj = 3;
+        System.out.println("Czy znajduje się " + szukaj + ": " + listaDwukierunkowaLista.ifContain(szukaj));
 
+        listaDwukierunkowaLista.delete(22);
         listaDwukierunkowaLista.printFromStart();
         System.out.println("===============");
         listaDwukierunkowaLista.printFromLast();
 
         try {
             System.out.println(listaDwukierunkowaLista.pollFirst());
-        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
-            kolejkaLista2KierOutOfIndex.printStackTrace();
+        } catch (ListaOutOfIndex listaOutOfIndex) {
+            listaOutOfIndex.printStackTrace();
         }
         try {
             System.out.println(listaDwukierunkowaLista.peekFirst());
-        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
-            kolejkaLista2KierOutOfIndex.printStackTrace();
+        } catch (ListaOutOfIndex listaOutOfIndex) {
+            listaOutOfIndex.printStackTrace();
         }
         try {
             System.out.println(listaDwukierunkowaLista.pollFirst());
-        } catch (KolejkaLista2KierOutOfIndex kolejkaLista2KierOutOfIndex) {
-            kolejkaLista2KierOutOfIndex.printStackTrace();
+        } catch (ListaOutOfIndex listaOutOfIndex) {
+            listaOutOfIndex.printStackTrace();
         }
 
         listaDwukierunkowaLista.addLast(5);
         listaDwukierunkowaLista.addFirst(7);
 
         listaDwukierunkowaLista.printFromStart();
-        System.out.println("==================");
+        System.out.println("================");
         listaDwukierunkowaLista.printFromLast();
 
     }
