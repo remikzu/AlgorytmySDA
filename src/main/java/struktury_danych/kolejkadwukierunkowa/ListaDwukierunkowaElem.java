@@ -15,7 +15,7 @@ public class ListaDwukierunkowaElem {
         this.next = next;
         this.previous = previous;
     }
-
+//    asdfasdf
     public int getValue() {
         return value;
     }
