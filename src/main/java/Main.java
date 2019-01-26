@@ -160,7 +160,7 @@ public class Main {
     public static void wywolajKolejkaDwukierunkowa() {
 
         ListaDwukierunkowaLista listaDwukierunkowaLista = new ListaDwukierunkowaLista();
-
+        
         listaDwukierunkowaLista.addFirst(1);
         listaDwukierunkowaLista.addFirst(123);
         listaDwukierunkowaLista.addFirst(334);
