@@ -9,6 +9,7 @@ public class Kalkulator {
 
         while(sc.hasNextLine()) {
             String line = sc.nextLine();
+
         }
 
     }

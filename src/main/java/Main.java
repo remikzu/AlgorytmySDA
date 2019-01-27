@@ -1,3 +1,4 @@
+import rekurencja.Silnia;
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
 import struktury_danych.algorytmy.ONP;
@@ -226,6 +227,11 @@ public class Main {
         sito.stworzSito(100);
     }
 
+    public static void wywolajSilnia() {
+        Silnia silnia = new Silnia();
+        silnia.rekurencyjnie(5);
+    }
+
     public static void main(String[] args) {
 
 //        wywolajTablice();
@@ -235,7 +241,8 @@ public class Main {
 //        wywolajONP();
 //        wywolajKolejkaDwukierunkowa();
 //        wywolajNWD();
-        wywolajSitoEratostenesa();
+//        wywolajSitoEratostenesa();
+        wywolajSilnia();
     }
 
 }
