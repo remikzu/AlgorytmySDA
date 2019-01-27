@@ -7,7 +7,7 @@ public class SitoEratostenesa {
     private boolean[] tab;
 
     public void stworzSito(int size) {
-        tab = new boolean[size];
+        tab = new boolean[size+1];
 
         Arrays.fill(tab, true);
 
@@ -16,7 +16,7 @@ public class SitoEratostenesa {
 
         for (int i = 2; i < size; i++) {
             if (tab[i] == true) {
-                for (int j = i+i; j < size; j = j + i) {
+                for (int j = i+i; j <= size; j = j + i) {
                     tab[j] = false;
                 }
             }
