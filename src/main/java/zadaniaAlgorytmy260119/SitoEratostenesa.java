@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class SitoEratostenesa {
 
-    public static void main(String[] args) {
+    private boolean[] tab;
 
-        int size = 100;
-        boolean tab[] = new boolean[size];
+    public void stworzSito(int size) {
+        tab = new boolean[size];
 
         Arrays.fill(tab, true);
 
@@ -29,5 +29,4 @@ public class SitoEratostenesa {
         }
 
     }
-
 }

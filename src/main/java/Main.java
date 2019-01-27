@@ -6,10 +6,7 @@ import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaOutOfIndex;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
-import zadaniaAlgorytmy260119.BinarySearch;
-import zadaniaAlgorytmy260119.NWD;
-import zadaniaAlgorytmy260119.Zadanie1do5;
-import zadaniaAlgorytmy260119.ZadanieTablice;
+import zadaniaAlgorytmy260119.*;
 
 import java.util.Scanner;
 
@@ -224,6 +221,11 @@ public class Main {
         System.out.println("NWD przez reszte: " + (stop-start));
     }
 
+    public static void wywolajSitoEratostenesa() {
+        SitoEratostenesa sito = new SitoEratostenesa();
+        sito.stworzSito(100);
+    }
+
     public static void main(String[] args) {
 
 //        wywolajTablice();
@@ -231,8 +233,9 @@ public class Main {
 //        wywolajStosList();
 //        wywolajKolejkaLista();
 //        wywolajONP();
-//            wywolajKolejkaDwukierunkowa();
-        wywolajNWD();
+//        wywolajKolejkaDwukierunkowa();
+//        wywolajNWD();
+        wywolajSitoEratostenesa();
     }
 
 }
