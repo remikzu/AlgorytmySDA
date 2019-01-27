@@ -6,6 +6,10 @@ import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaOutOfIndex;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
+import zadaniaAlgorytmy260119.BinarySearch;
+import zadaniaAlgorytmy260119.NWD;
+import zadaniaAlgorytmy260119.Zadanie1do5;
+import zadaniaAlgorytmy260119.ZadanieTablice;
 
 import java.util.Scanner;
 
@@ -200,6 +204,26 @@ public class Main {
 
     }
 
+    public static void wywolajNWD() {
+        NWD nwd = new NWD();
+        long start;
+        long stop;
+        int a = 10002;
+        int b = 4;
+
+        start = System.nanoTime();
+        nwd.przezOdejmowanie(a, b);
+        stop = System.nanoTime();
+
+        System.out.println("NWD odejmowanie: " + (stop-start));
+
+        start = System.nanoTime();
+        nwd.przezReszteZDzielenia(a, b);
+        stop = System.nanoTime();
+
+        System.out.println("NWD przez reszte: " + (stop-start));
+    }
+
     public static void main(String[] args) {
 
 //        wywolajTablice();
@@ -207,7 +231,8 @@ public class Main {
 //        wywolajStosList();
 //        wywolajKolejkaLista();
 //        wywolajONP();
-            wywolajKolejkaDwukierunkowa();
+//            wywolajKolejkaDwukierunkowa();
+        wywolajNWD();
     }
 
 }
