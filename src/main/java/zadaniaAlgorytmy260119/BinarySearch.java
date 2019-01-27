@@ -1,15 +1,14 @@
 package zadaniaAlgorytmy260119;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class BinarySearch {
 
-    public static int binarySearch(int[] tab, int y) {
+    private static String binarySearch(int[] tab, int y) {
 
         int left = 0;
         int right = tab.length-1;
-        int index;
+        String index;
         int middle;
 
         while (left < right) {
@@ -21,17 +20,17 @@ public class BinarySearch {
             }
         }
         if (tab[left] == y) {
-            index = left;
+            index = String.valueOf(left);
         } else {
-            index = -1;
+            index = "Nie znaleziono takiej liczby!";
         }
         return index;
     }
 
-    public static void runBinarySearch() {
+    private static void runBinarySearch() {
         int[] tab = new int[100];
         for (int i = 0; i < tab.length; i++) {
-            tab[i] = i+8;
+            tab[i] = i+1;
         }
         Arrays.sort(tab);
         System.out.println(Arrays.toString(tab));
