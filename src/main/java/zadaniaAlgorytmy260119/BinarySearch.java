@@ -27,6 +27,20 @@ public class BinarySearch {
         return index;
     }
 
+    private static int binarySearchRekurencjnie(int a[], int lewo, int prawo, int szukany) {
+        if (lewo > prawo) {
+            return -1;
+        }
+        int srodek = (lewo+prawo) / 2;
+        if (a[srodek] == szukany) {
+            return szukany;
+        }
+        if (a[srodek] < szukany) {
+            return binarySearchRekurencjnie(a, srodek + 1, prawo, szukany);
+        }
+        else return binarySearchRekurencjnie(a, lewo, srodek -1, szukany);
+    }
+
     private static void runBinarySearch() {
         int[] tab = new int[100];
         for (int i = 0; i < tab.length; i++) {
@@ -34,7 +48,8 @@ public class BinarySearch {
         }
         Arrays.sort(tab);
         System.out.println(Arrays.toString(tab));
-        System.out.println(binarySearch(tab,10));
+//        System.out.println(binarySearch(tab,10));
+        System.out.println(binarySearchRekurencjnie(tab,0, tab.length-1, 10));
     }
 
     public static void main(String[] args) {

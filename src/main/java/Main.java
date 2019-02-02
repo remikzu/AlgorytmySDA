@@ -1,7 +1,10 @@
+import rekurencja.CiagFibonacciego;
 import rekurencja.Silnia;
 import struktury_danych.StosTab;
 import struktury_danych.Tablice;
 import struktury_danych.algorytmy.ONP;
+import struktury_danych.algorytmy.dijkstra.Dijkstra;
+import struktury_danych.drzewa.BinarneDrzewoPrzeszukiwan;
 import struktury_danych.kolejka.KolejkaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaOutOfIndex;
@@ -232,6 +235,26 @@ public class Main {
         silnia.rekurencyjnie(5);
     }
 
+    public static void wywolajCiagFib() {
+        CiagFibonacciego ciag = new CiagFibonacciego();
+        System.out.println(ciag.obliczFib(10));
+    }
+
+    public static void wywolajBST() {
+        BinarneDrzewoPrzeszukiwan bst = new BinarneDrzewoPrzeszukiwan();
+        bst.dodaj(5);
+        bst.dodaj(2);
+        bst.dodaj(7);
+        bst.dodaj(10);
+        bst.dodaj(3);
+        bst.dodaj(6);
+        bst.dodaj(15);
+        bst.dodaj(21);
+        bst.dodaj(1);
+        bst.usun(1);
+        bst.usun(7);
+    }
+
     public static void main(String[] args) {
 
 //        wywolajTablice();
@@ -242,7 +265,10 @@ public class Main {
 //        wywolajKolejkaDwukierunkowa();
 //        wywolajNWD();
 //        wywolajSitoEratostenesa();
-        wywolajSilnia();
+//        wywolajSilnia();
+//        wywolajCiagFib();
+//        wywolajBST();
+        Dijkstra.run();
     }
 
 }

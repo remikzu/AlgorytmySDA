@@ -24,7 +24,10 @@ public class NWD {
         return a;
     }
 
-    public static void main(String[] args) {
-
+    public int rekurencyjnie(int a, int b) {
+        if (b != 0) {
+            return rekurencyjnie(b,a%b);
+        }
+        else return a;
     }
 }
