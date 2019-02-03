@@ -2,7 +2,7 @@ package struktury_danych.sortowanie;
 
 import java.util.Arrays;
 
-public class SortowaniePrzezWybieranie {
+public class SelectSort {
 
     public int[] sortowaniePrzezWybieranie(int tab[]) {
 
