@@ -8,10 +8,12 @@ import struktury_danych.drzewa.BinarneDrzewoPrzeszukiwan;
 import struktury_danych.kolejka.KolejkaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaDwukierunkowaLista;
 import struktury_danych.kolejkadwukierunkowa.ListaOutOfIndex;
+import struktury_danych.kopiec.Kopiec;
 import struktury_danych.stos.StosLista;
 import struktury_danych.stos.StosListaOutOfIndex;
 import zadaniaAlgorytmy260119.*;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -255,6 +257,13 @@ public class Main {
         bst.usun(7);
     }
 
+    public static void wywolajKopiec() {
+        int[] tab = new int[] {3, 8, 2, 6, 10, 7, 9, 15, 4, 18};
+        Kopiec kopiec = new Kopiec();
+        kopiec.run(tab);
+        System.out.println(Arrays.toString(tab));
+    }
+
     public static void main(String[] args) {
 
 //        wywolajTablice();
@@ -268,7 +277,8 @@ public class Main {
 //        wywolajSilnia();
 //        wywolajCiagFib();
 //        wywolajBST();
-        Dijkstra.run();
+//        Dijkstra.run();
+        wywolajKopiec();
     }
 
 }
