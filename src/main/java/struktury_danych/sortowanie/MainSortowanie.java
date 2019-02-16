@@ -1,5 +1,6 @@
 package struktury_danych.sortowanie;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainSortowanie {
@@ -34,14 +35,20 @@ public class MainSortowanie {
         System.out.println(Arrays.toString(sort.quickSort(tab.clone(), 0, tab.length - 1)));
     }
 
+    public static void wywolajKopiecSort() {
+        SortowaniePrzezKopcowanie sort = new SortowaniePrzezKopcowanie();
+        int[] tab = {10, 5, 3, 7, 1, 6, 2};
+        System.out.println(Arrays.toString(sort.sortujKopiec(tab)));
+    }
+
 
     public static void main(String[] args) {
 //        wywolajSelectSort();
 //        wywolajBubbleSort();
 //        wywolajCountingSort();
 //        wywolajInsterSort();
-        wywolajQuickSort();
-
+//        wywolajQuickSort();
+            wywolajKopiecSort();
     }
 
 }

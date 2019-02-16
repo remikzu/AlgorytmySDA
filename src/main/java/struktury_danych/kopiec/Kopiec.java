@@ -2,6 +2,9 @@ package struktury_danych.kopiec;
 
 public class Kopiec {
 
+    public Kopiec() {
+    }
+
     public void stworz(int[] tab, int n, int obecny) {
         int lewy = 2 * obecny + 1;
         int prawy = 2 * obecny + 2;
