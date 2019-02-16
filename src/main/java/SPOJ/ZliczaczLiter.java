@@ -20,11 +20,39 @@ public class ZliczaczLiter {
             mapa.put(tab[i], count);
             count = 0;
         }
-        printMap(mapa);
+        printMap2(mapa);
     }
 
     public static <K, V> void printMap(Map<K, V> map) {
         for (Map.Entry<K, V> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public static <K, V> void printMap2(Map<K, V> map) {
+        boolean byloMaleA = false;
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            if(entry.getKey().equals('a')) {
+                byloMaleA = true;
+            }
+
+            if(!byloMaleA) {
+                continue;
+            }
+
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        byloMaleA = false;
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            if(entry.getKey().equals('a')) {
+                byloMaleA = true;
+            }
+
+            if(byloMaleA) {
+                break;
+            }
+
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
     }

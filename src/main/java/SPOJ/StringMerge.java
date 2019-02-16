@@ -1,6 +1,5 @@
 package SPOJ;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StringMerge {
@@ -18,13 +17,13 @@ public class StringMerge {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//        int t = sc.nextInt();
-//        for (int i = 0; i < t; i++) {
-            String s1 = sc.nextLine();
-            String s2 = sc.nextLine();
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            String s1 = sc.next();
+            String s2 = sc.next();
 
         System.out.println(string_merge(s1, s2));
         }
     }
 
-//}
+}

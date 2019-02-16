@@ -1,3 +1,5 @@
+import SPOJ.SUMREK;
+import SPOJ.TrojkatRekurencyjnie;
 import rekurencja.CiagFibonacciego;
 import rekurencja.Silnia;
 import struktury_danych.StosTab;
@@ -242,6 +244,22 @@ public class Main {
         System.out.println(ciag.obliczFib(10));
     }
 
+    public static void wywolajSUMREK() {
+        SUMREK suma = new SUMREK();
+
+        Scanner sc = new Scanner(System.in);
+        int test = sc.nextInt();
+        for (int i = 1; i <= test; i++) {
+            int n = sc.nextInt();
+            System.out.println(suma.sumaRekurencyjnie(n));
+        }
+    }
+
+    public static void wywolajTrojkatRekurencyjnie() {
+        TrojkatRekurencyjnie trojkat = new TrojkatRekurencyjnie();
+        System.out.println(trojkat.rysujTrojkat(3));
+    }
+
     public static void wywolajBST() {
         BinarneDrzewoPrzeszukiwan bst = new BinarneDrzewoPrzeszukiwan();
         bst.dodaj(5);
@@ -276,9 +294,11 @@ public class Main {
 //        wywolajSitoEratostenesa();
 //        wywolajSilnia();
 //        wywolajCiagFib();
-//        wywolajBST();
-//        Dijkstra.run();
-        wywolajKopiec();
+////        wywolajBST();
+////        Dijkstra.run();
+//        wywolajKopiec();
+//        wywolajSUMREK();
+        wywolajTrojkatRekurencyjnie();
     }
 
 }
